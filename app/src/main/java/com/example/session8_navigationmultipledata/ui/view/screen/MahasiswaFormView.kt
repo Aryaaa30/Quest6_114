@@ -40,7 +40,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.session8_navigationmultipledata.R
 
-@Preview(showBackground = true)
 @Composable
 fun MahasiswaFormView(
     onSubmitButtonClicked: (MutableList<String>) -> Unit,
