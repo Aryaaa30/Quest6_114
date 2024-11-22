@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Info
@@ -32,6 +33,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -93,6 +96,7 @@ fun MahasiswaFormView(
                     text = "Isi sesuai dengan data yang kamu daftarkan",
                     fontWeight = FontWeight.Light,
                 )
+                Spacer(modifier = Modifier.padding(top = 8.dp))
                 OutlinedTextField(modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(50.dp),
                     value = nim,
@@ -101,7 +105,11 @@ fun MahasiswaFormView(
                     leadingIcon = {
                         Icon(imageVector = Icons.Filled.Info,
                             contentDescription = "")
-                    }
+                    },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Number,
+                        imeAction = ImeAction.Next
+                    ),
                 )
                 OutlinedTextField(modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(50.dp),
