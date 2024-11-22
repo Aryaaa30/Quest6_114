@@ -38,7 +38,9 @@ import com.example.session8_navigationmultipledata.R
 
 @Preview(showBackground = true)
 @Composable
-fun MahasiswaFormView(){
+fun MahasiswaFormView(
+    onSubmitButtonClicked: (MutableList<String>) -> Unit,
+){
 
     var nim by remember { mutableStateOf("")}
     var nama by remember { mutableStateOf("")}
