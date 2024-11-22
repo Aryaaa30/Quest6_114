@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.session8_navigationmultipledata.model.Mahasiswa
+import com.example.session8_navigationmultipledata.ui.view.screen.SplashView
 import com.example.session8_navigationmultipledata.ui.view.viewmodel.MahasiswaViewModel
 import com.example.session8_navigationmultipledata.ui.view.viewmodel.RencanaStudyViewModel
 
@@ -26,16 +27,18 @@ fun MahasiswaApp(
     krsViewModel: RencanaStudyViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ){
-    val mahasiswauiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
-
+    val mahasiswaUiState = mahasiswaiViewModel.mahasiswaUiState.collectAsState().value
     NavHost(
         navController = navController,
-        startDestination = Halaman.Screen.name,
+        startDestination = Halaman.Splash.name,
         modifier = Modifier.padding()
     ){
-        composable(route = Halaman.Screen.name){
-        }
-        composable(route = Halaman.Screen.name){
+        composable(route = Halaman.Splash.name) {
+            SplashView(onMulaiButton = {
+                navController.navigate(
+                    Halaman.Mahasiswa.name
+                )
+            })
         }
     }
 

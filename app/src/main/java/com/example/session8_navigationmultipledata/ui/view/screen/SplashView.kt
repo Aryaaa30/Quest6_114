@@ -18,10 +18,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.session8_navigationmultipledata.R
 
-@Preview(showBackground = true)
 @Composable
 fun SplashView(
-
+    onMulaiButton: () -> Unit
 ){
     Column(modifier = Modifier
         .fillMaxSize()
@@ -34,7 +33,7 @@ fun SplashView(
             modifier = Modifier.size(150.dp)
         )
 
-        Button(onClick = {
+        Button(onClick = { onMulaiButton()
         },
             modifier = Modifier.padding(vertical = 18.dp)
                 .size(width = 200.dp, height = 50.dp)){
