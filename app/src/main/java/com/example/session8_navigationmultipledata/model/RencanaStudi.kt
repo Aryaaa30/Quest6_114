@@ -1,4 +1,6 @@
 package com.example.session8_navigationmultipledata.model
 
-class RencanaStudi {
-}
+data class RencanaStudi(
+    val namaMK : String = "",
+    val kelas : String = "",
+)
