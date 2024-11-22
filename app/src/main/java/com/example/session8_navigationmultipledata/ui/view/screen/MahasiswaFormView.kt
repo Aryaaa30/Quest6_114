@@ -40,6 +40,7 @@ import com.example.session8_navigationmultipledata.R
 @Composable
 fun MahasiswaFormView(
     onSubmitButtonClicked: (MutableList<String>) -> Unit,
+    onBackButtonClicked: () -> Unit
 ){
 
     var nim by remember { mutableStateOf("")}
