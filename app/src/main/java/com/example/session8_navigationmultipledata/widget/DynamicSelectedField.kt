@@ -1,5 +1,6 @@
 package com.example.session8_navigationmultipledata.widget
 
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
@@ -12,7 +13,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import java.lang.reflect.Modifier
+import androidx.compose.ui.Modifier
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -22,14 +23,14 @@ fun DynamicSelectTextField(
     label: String,
     onValueChangedEvent: (String) -> Unit,
     modifier: Modifier = Modifier
-){
+) {
     var expanded by remember { mutableStateOf(false) }
 
     ExposedDropdownMenuBox(
         expanded = expanded,
         onExpandedChange = { expanded = !expanded },
         modifier = modifier
-    ) {
+    ){
         OutlinedTextField(
             readOnly = true,
             value = selectedValue,
@@ -43,15 +44,14 @@ fun DynamicSelectTextField(
                 .menuAnchor()
                 .fillMaxWidth()
         )
-        ExposedDropdownMenu(
-            expanded = expanded, onDismissRequest = { expanded = false }){
+        ExposedDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
             options.forEach { option: String ->
                 DropdownMenuItem(
                     text = { Text(text = option) },
                     onClick = {
                         expanded = false
                         onValueChangedEvent(option)
-                    },
+                    }
                 )
             }
         }
