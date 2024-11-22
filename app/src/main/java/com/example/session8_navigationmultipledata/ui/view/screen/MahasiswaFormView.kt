@@ -123,8 +123,10 @@ fun MahasiswaFormView(
                             contentDescription = "")
                     },
                     keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Text
-                    )
+                        keyboardType = KeyboardType.Text,
+                        imeAction = ImeAction.Next
+                    ),
+                )
                 OutlinedTextField(modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(50.dp),
                     value = email,
