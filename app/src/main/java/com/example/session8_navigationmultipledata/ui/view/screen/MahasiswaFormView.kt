@@ -110,6 +110,7 @@ fun MahasiswaFormView(
                         keyboardType = KeyboardType.Number,
                         imeAction = ImeAction.Next
                     ),
+                    singleLine = true
                 )
                 OutlinedTextField(modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(50.dp),
