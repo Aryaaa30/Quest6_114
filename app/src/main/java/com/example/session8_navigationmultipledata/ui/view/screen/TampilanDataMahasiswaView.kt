@@ -29,6 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.session8_navigationmultipledata.Navigation.Halaman
 import com.example.session8_navigationmultipledata.R
 import com.example.session8_navigationmultipledata.model.Mahasiswa
 import com.example.session8_navigationmultipledata.model.RencanaStudi
@@ -119,7 +120,7 @@ fun TampilanDataMahasiswaView(
                     horizontalArrangement = Arrangement.Center
                 ) {
                     Button(
-                        onClick = { navHostController.popBackStack() },
+                        onClick = { navHostController.navigate(Halaman.Splash.name) },
                         modifier = Modifier
                             .size(width = 200.dp, height = 50.dp)
                             .clip(RoundedCornerShape(8.dp))
