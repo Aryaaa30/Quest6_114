@@ -20,7 +20,7 @@ import com.example.session8_navigationmultipledata.R
 
 @Preview(showBackground = true)
 @Composable
-fun ScrennView(
+fun SplashView(
 
 ){
     Column(modifier = Modifier
