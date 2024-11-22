@@ -144,12 +144,14 @@ fun MahasiswaFormView(
                     ),
                     singleLine = true
                 )
+                Spacer(modifier = Modifier.padding(16.dp))
                 Row (modifier = Modifier
                     .fillMaxWidth()
                     .padding(14.dp),
-                    horizontalArrangement = Arrangement.SpaceEvenly){
-                    Button(onClick = {}) {
-                    Text(text = "Back")
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ){
+                    Button(onClick = { onBackButtonClicked() }) {
+                        Text(text = "Kembali")
                     }
                     Button(onClick = {}) {
                         Text(text = "Back")
