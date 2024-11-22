@@ -4,11 +4,14 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -39,7 +42,24 @@ fun TampilanDataMahasiswaView(
                 .clip(CircleShape)
         )
         Spacer(modifier = Modifier.padding(8.dp))
+
+        TampilData(
+            judul = "NIM",
+            isinya = mhs.nim
+        )
+
+
     }
 
 
+}
+@Composable
+fun TampilData(judul:String, isinya:String){
+    Row (modifier = Modifier.fillMaxWidth()
+        .padding(16.dp),
+        horizontalArrangement = Arrangement.SpaceBetween){
+        Text(judul, modifier = Modifier.weight(0.8f))
+        Text(":", modifier = Modifier.weight(0.2f))
+        Text(isinya, modifier = Modifier.weight(2f))
+    }
 }
