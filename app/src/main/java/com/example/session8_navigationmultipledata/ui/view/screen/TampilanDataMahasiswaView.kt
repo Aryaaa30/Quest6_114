@@ -22,10 +22,12 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.session8_navigationmultipledata.R
 import com.example.session8_navigationmultipledata.model.Mahasiswa
+import com.example.session8_navigationmultipledata.model.RencanaStudi
 
 @Composable
 fun TampilanDataMahasiswaView(
     mhs: Mahasiswa,
+    mk: RencanaStudi,
     navHostController: NavHostController
 ){
     Column(
@@ -47,11 +49,23 @@ fun TampilanDataMahasiswaView(
             judul = "NIM",
             isinya = mhs.nim
         )
-
-
+        TampilData(
+            judul = "Nama",
+            isinya = mhs.nama
+        )
+        TampilData(
+            judul = "Email",
+            isinya = mhs.email
+        )
+        TampilData(
+            judul = "Mata Kuliah Peminatan",
+            isinya = mk.namaMK
+        )
+        TampilData(
+            judul = "Kelas",
+            isinya = mk.kelas
+        )
     }
-
-
 }
 @Composable
 fun TampilData(judul:String, isinya:String){
