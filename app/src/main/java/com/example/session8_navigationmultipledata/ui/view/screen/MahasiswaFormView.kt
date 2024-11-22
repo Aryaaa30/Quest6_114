@@ -64,7 +64,7 @@ fun MahasiswaFormView(
                 Text(
                     text = "Universitas Muhammadiyah Yogyakarta",
                     color = Color.White,
-                    fontSize = 14.sp,
+                    fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
@@ -74,6 +74,7 @@ fun MahasiswaFormView(
                 )
             }
         }
+        Spacer(modifier = Modifier.padding(top = 16.dp))
 
         Box(modifier = Modifier
             .fillMaxSize()
