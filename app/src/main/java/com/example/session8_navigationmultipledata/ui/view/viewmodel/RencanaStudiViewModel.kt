@@ -1,4 +1,12 @@
 package com.example.session8_navigationmultipledata.ui.view.viewmodel
 
-class RencanaStudiViewModel {
+import androidx.lifecycle.ViewModel
+import com.example.session8_navigationmultipledata.model.RencanaStudi
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+
+class RencanaStudyViewModel : ViewModel() {
+    private val _krsState = MutableStateFlow(RencanaStudi())
+    val krsStateUi: StateFlow<RencanaStudi> = _krsState.asStateFlow()
 }
