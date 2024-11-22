@@ -126,7 +126,9 @@ fun MahasiswaFormView(
                         keyboardType = KeyboardType.Text,
                         imeAction = ImeAction.Next
                     ),
+                    singleLine = true
                 )
+                Spacer(modifier = Modifier.padding(4.dp))
                 OutlinedTextField(modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(50.dp),
                     value = email,
@@ -135,7 +137,12 @@ fun MahasiswaFormView(
                     leadingIcon = {
                         Icon(imageVector = Icons.Filled.Email,
                             contentDescription = "")
-                    }
+                    },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Email,
+                        imeAction = ImeAction.Done
+                    ),
+                    singleLine = true
                 )
                 Row (modifier = Modifier
                     .fillMaxWidth()
