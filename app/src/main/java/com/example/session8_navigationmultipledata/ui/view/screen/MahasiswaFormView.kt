@@ -112,16 +112,19 @@ fun MahasiswaFormView(
                     ),
                     singleLine = true
                 )
+                Spacer(modifier = Modifier.padding(4.dp))
                 OutlinedTextField(modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(50.dp),
                     value = nama,
                     onValueChange = {nama = it},
-                    label = { Text("Masukkan Nama Anda") },
+                    label = { Text("Nama Mahasiswa") },
                     leadingIcon = {
                         Icon(imageVector = Icons.Filled.Person,
                             contentDescription = "")
-                    }
-                )
+                    },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Text
+                    )
                 OutlinedTextField(modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(50.dp),
                     value = email,
