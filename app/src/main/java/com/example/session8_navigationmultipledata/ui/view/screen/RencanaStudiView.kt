@@ -39,13 +39,14 @@ import com.example.session8_navigationmultipledata.R
 import com.example.session8_navigationmultipledata.data.MataKuliah
 import com.example.session8_navigationmultipledata.data.RuangKelas
 import com.example.session8_navigationmultipledata.model.Mahasiswa
+import com.example.session8_navigationmultipledata.model.RencanaStudi
 import com.example.session8_navigationmultipledata.widget.DynamicSelectTextField
 
 @Composable
 fun RencanaStudyView(
     mahasiswa: Mahasiswa,
-    onSubmitButtonClicked: (MutableList<String>) -> Unit,
-    onBackButtonClicked: () -> Unit
+    onNavigateToTampilanDataMahasiswa: (String, String) -> Unit,
+    onBackButtonClicked: () -> Unit,
 ){
     var chosenDropdown by remember {
         mutableStateOf("")
@@ -166,7 +167,15 @@ fun RencanaStudyView(
                     Button(onClick = { onBackButtonClicked() }) {
                         Text(text = "Kembali")
                     }
-                    Button(onClick = { onSubmitButtonClicked(listData) }, enabled = checked) {
+                    Button(
+                        onClick = {
+                            // Pastikan data sudah dipilih sebelum melanjutkan
+                            if (chosenDropdown.isNotBlank() && pilihanKelas.isNotBlank()) {
+                                onNavigateToTampilanDataMahasiswa(chosenDropdown, pilihanKelas) // Kirim dua data
+                            }
+                        },
+                        enabled = chosenDropdown.isNotBlank() && pilihanKelas.isNotBlank()
+                    ) {
                         Text(text = "Lanjut")
                     }
                 }

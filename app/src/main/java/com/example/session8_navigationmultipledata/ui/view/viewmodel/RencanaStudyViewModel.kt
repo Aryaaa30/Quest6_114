@@ -1,6 +1,7 @@
 package com.example.session8_navigationmultipledata.ui.view.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavBackStackEntry
 import com.example.session8_navigationmultipledata.model.RencanaStudi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -19,10 +20,12 @@ class RencanaStudyViewModel : ViewModel() {
         _krsState.update { stateKelas -> stateKelas.copy(kelas = kelasPilihan) }
     }
 
-    fun saveDataKRS(ls: MutableList<String>) {
-        _krsState.update { status -> status.copy(
-            namaMK = ls[0],
-            kelas = ls[1]
-        )}
+    fun saveDataKRS(namaMK: String, kelas: String) {
+        _krsState.update { state ->
+            state.copy(
+                namaMK = namaMK,
+                kelas = kelas
+            )
+        }
     }
 }

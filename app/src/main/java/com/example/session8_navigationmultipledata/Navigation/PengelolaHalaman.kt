@@ -9,7 +9,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.session8_navigationmultipledata.model.Mahasiswa
 import com.example.session8_navigationmultipledata.ui.view.screen.MahasiswaFormView
 import com.example.session8_navigationmultipledata.ui.view.screen.RencanaStudyView
 import com.example.session8_navigationmultipledata.ui.view.screen.SplashView
@@ -59,10 +58,14 @@ fun MahasiswaApp(
         composable(route = Halaman.Matakuliah.name) {
             RencanaStudyView(
                 mahasiswa = mahasiswaUiState,
-                onSubmitButtonClicked = { krsViewModel.saveDataKRS(it) },
+                onNavigateToTampilanDataMahasiswa = { namaMK, kelas ->
+                    krsViewModel.saveDataKRS(namaMK, kelas)
+                    navController.navigate(Halaman.Tampil.name)
+                },
                 onBackButtonClicked = { navController.popBackStack() }
             )
         }
+
         composable(route = Halaman.Tampil.name) {
             TampilanDataMahasiswaView(
                 mhs = mahasiswaUiState,
