@@ -13,6 +13,7 @@ import com.example.session8_navigationmultipledata.model.Mahasiswa
 import com.example.session8_navigationmultipledata.ui.view.screen.MahasiswaFormView
 import com.example.session8_navigationmultipledata.ui.view.screen.RencanaStudyView
 import com.example.session8_navigationmultipledata.ui.view.screen.SplashView
+import com.example.session8_navigationmultipledata.ui.view.screen.TampilanDataMahasiswaView
 import com.example.session8_navigationmultipledata.ui.view.viewmodel.MahasiswaViewModel
 import com.example.session8_navigationmultipledata.ui.view.viewmodel.RencanaStudyViewModel
 
@@ -60,6 +61,13 @@ fun MahasiswaApp(
                 mahasiswa = mahasiswaUiState,
                 onSubmitButtonClicked = { krsViewModel.saveDataKRS(it) },
                 onBackButtonClicked = { navController.popBackStack() }
+            )
+        }
+        composable(route = Halaman.Tampil.name) {
+            TampilanDataMahasiswaView(
+                mhs = mahasiswaUiState,
+                mk = krsUiState,
+                navHostController = navController
             )
         }
     }
