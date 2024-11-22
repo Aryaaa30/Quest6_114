@@ -1,5 +1,6 @@
 package com.example.session8_navigationmultipledata.widget
 
+import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -14,6 +15,14 @@ fun DynamicSelectTextField(
     modifier: Modifier = Modifier
 ){
     var expanded by remember { mutableStateOf(false) }
+
+    ExposedDropdownMenuBox(
+        expanded = expanded,
+        onExpandedChange = { expanded = !expanded },
+        modifier = modifier
+    ) {
+
+    }
 
 
 }
