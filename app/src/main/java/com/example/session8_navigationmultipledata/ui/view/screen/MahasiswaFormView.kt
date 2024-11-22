@@ -50,7 +50,8 @@ fun MahasiswaFormView(
 
     Column(modifier = Modifier
         .fillMaxSize()
-        .background(color = colorResource(id = R.color.Primary))
+        .background(color = colorResource(id = R.color.Primary)),
+        horizontalAlignment = Alignment.CenterHorizontally
     ){
         Row (modifier = Modifier.padding(40.dp),
             verticalAlignment = Alignment.CenterVertically){
