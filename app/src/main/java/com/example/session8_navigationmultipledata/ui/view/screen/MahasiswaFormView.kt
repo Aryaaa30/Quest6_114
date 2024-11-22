@@ -53,6 +53,7 @@ fun MahasiswaFormView(
         .background(color = colorResource(id = R.color.Primary)),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
+        Spacer(modifier = Modifier.padding(16.dp))
         Row (modifier = Modifier.padding(40.dp),
             verticalAlignment = Alignment.CenterVertically){
             Image(painter = painterResource(id = R.drawable.umy),
