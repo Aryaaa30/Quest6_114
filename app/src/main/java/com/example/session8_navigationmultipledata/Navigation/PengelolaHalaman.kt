@@ -12,9 +12,11 @@ import androidx.navigation.compose.rememberNavController
 import com.example.session8_navigationmultipledata.model.Mahasiswa
 import com.example.session8_navigationmultipledata.ui.view.viewmodel.MahasiswaViewModel
 
-enum class Halaman{
-    Screen,
-    Mahasiswa
+enum class Halaman {
+    Splash,
+    Mahasiswa,
+    Matakuliah,
+    Tampil
 }
 @Composable
 fun MahasiswaApp(
