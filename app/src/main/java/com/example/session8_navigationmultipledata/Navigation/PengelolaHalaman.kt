@@ -11,6 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.session8_navigationmultipledata.model.Mahasiswa
 import com.example.session8_navigationmultipledata.ui.view.viewmodel.MahasiswaViewModel
+import com.example.session8_navigationmultipledata.ui.view.viewmodel.RencanaStudyViewModel
 
 enum class Halaman {
     Splash,
@@ -20,7 +21,9 @@ enum class Halaman {
 }
 @Composable
 fun MahasiswaApp(
-    mahasiswaViewModel: MahasiswaViewModel = viewModel(),
+    modifier: Modifier = Modifier,
+    mahasiswaiViewModel: MahasiswaViewModel = viewModel(),
+    krsViewModel: RencanaStudyViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ){
     val mahasiswauiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
