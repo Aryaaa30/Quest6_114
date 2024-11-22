@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,6 +20,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.session8_navigationmultipledata.R
 import com.example.session8_navigationmultipledata.model.Mahasiswa
@@ -65,6 +67,16 @@ fun TampilanDataMahasiswaView(
             judul = "Kelas",
             isinya = mk.kelas
         )
+        Spacer(modifier = Modifier.padding(16.dp))
+
+        Button(
+            onClick = { navHostController.popBackStack() },
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .size(width = 200.dp, height = 50.dp)
+        ) {
+            Text("Kembali", color = Color.White, fontSize = 16.sp)
+        }
     }
 }
 @Composable
